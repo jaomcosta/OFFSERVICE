@@ -90,6 +90,11 @@ header li a:hover {
   justify-content: center;
 }
 
+.mapa iframe {
+  background: #f9f9f9;
+  min-height: 250px;
+}
+
 .mapa {
   max-width: 500px;
   width: 45%;
@@ -167,7 +172,6 @@ header li a:hover {
 footer {
   background-color: #111;
   color: white;
-  padding: 100px;
-  margin: 100px;
+  padding: 20px;
   text-align: center;
 }
