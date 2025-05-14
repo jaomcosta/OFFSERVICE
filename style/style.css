@@ -96,6 +96,7 @@ header li a:hover {
 }
 
 .mapa {
+  overflow: visible;
   max-width: 500px;
   width: 45%;
   background: #f9f9f9;
@@ -174,4 +175,11 @@ footer {
   color: white;
   padding: 20px;
   text-align: center;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
