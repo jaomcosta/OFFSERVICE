@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 0px;
   padding: 0px;
   font-family: Arial, sans-serif;
   background-color: #f8f8f8;
@@ -22,14 +22,25 @@ menu {
   margin-bottom: -5px;
 }
 
-header ul {
-  list-style: none;
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   padding: 0;
+  margin: 10px 0;
 }
 
 header li {
-  display: inline;
-  margin: 0 15px;
+  display: block;
+}
+
+header li a {
+  display: inline-block;
+  margin: 5px;
+  font-size: 16px;
+  padding: 10px 15px;
+  text-align: center;
 }
 
 header li a {
@@ -83,32 +94,30 @@ header li a:hover {
 }
 
 .mapa-container {
-  padding: 110px 0px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-}
-
-.mapa iframe {
-  background: #f9f9f9;
-  min-height: 250px;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 0;
 }
 
 .mapa {
-  overflow: visible;
   max-width: 500px;
-  width: 45%;
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
 }
 
 .botoes-mapa a {
   display: inline-block;
   margin: 10px 5px;
   padding: 10px 15px;
-  background: #25d366;
+  background: #0070C9;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -138,6 +147,13 @@ header li a:hover {
 #contato {
   text-align: center;
   margin: 40px 0;
+}
+
+.contato-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .btn-whatsapp {
@@ -179,7 +195,4 @@ footer {
 footer a {
   color: white;
   text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
 }
