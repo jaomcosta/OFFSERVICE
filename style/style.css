@@ -187,12 +187,18 @@ header li a:hover {
 }
 
 footer {
-  background-color: #111;
-  color: white;
+ background-color: #c72a5b; 
+  color: black;
   padding: 20px;
   text-align: center;
 }
+
+footer img {
+  width: 50px;
+  height: auto;  
+}
+
 footer a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
