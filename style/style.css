@@ -2,12 +2,12 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
+  background-color: #f8f8f88e;
 }
 
 header {
-  background-color: #111;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 20px 0px;
   text-align: center;
 }
@@ -54,7 +54,8 @@ header li a {
 }
 
 header li a:hover {
-  background-color: #444;
+  background-color: white;
+  color: black;
 }
 
 #servicos-banner {
@@ -135,6 +136,8 @@ header li a:hover {
 #sobre {
   padding: 40px;
   text-align: justify;
+  background-color: gray;
+  color: white;
   
 }
 .sobre-container {
@@ -146,7 +149,6 @@ header li a:hover {
 
 #contato {
   text-align: center;
-  margin: 40px 0;
 }
 
 .contato-botoes {
@@ -157,23 +159,15 @@ header li a:hover {
 }
 
 .btn-whatsapp {
-  background-color: #25D366;
-  color: white;
   padding: 10px 20px;
   margin: 10px 20px;
   text-decoration: none;
   font-size: 18px;
   border-radius: 10px;
   transition: background-color 0.5s;
-}
-
-.btn-whatsapp:hover {
-  background-color: #1ebe5d;
 }
 
 .btn-instagram {
-  background-color: #E1306C;
-  color: white;
   padding: 10px 20px;
   margin: 10px 20px;
   text-decoration: none;
@@ -182,15 +176,13 @@ header li a:hover {
   transition: background-color 0.5s;
 }
 
-.btn-instagram:hover {
-  background-color: #c72a5b;
-}
-
 footer {
- background-color: #c72a5b; 
+ background-color: white; 
   color: black;
   padding: 20px;
   text-align: center;
+    background-color: gray;
+  color: white;
 }
 
 footer img {
@@ -199,6 +191,6 @@ footer img {
 }
 
 footer a {
-  color: black;
+  color: white;
   text-decoration: none;
 }
