@@ -1,0 +1,32 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.5",
+    "postcss-import": "^16.1.0",
+    "postcss-nesting": "^13.0.2",
+    "tailwindcss": "^4.1.10"
+  },
+  "name": "offservice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "start": "concurrently \"npm run dev\" \"live-server ./src\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaomcosta/OFFSERVICE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaomcosta/OFFSERVICE/issues"
+  },
+  "homepage": "https://github.com/jaomcosta/OFFSERVICE#readme",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10"
+  }
+}
