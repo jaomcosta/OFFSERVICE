@@ -7,13 +7,10 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
-    --radius-lg: 0.5rem;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -166,188 +163,172 @@
   }
 }
 @layer utilities;
-body {
-  margin: calc(var(--spacing) * 0);
-  background-color: #f8f8f88e;
-  padding: calc(var(--spacing) * 0);
-  font-family: var(--font-sans);
+@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
-@layer components {
-  header {
-    background-color: var(--color-white);
-    padding: calc(var(--spacing) * 5);
-    text-align: center;
-    color: var(--color-black);
-    menu {
-      margin-bottom: calc(5px * -1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    ul {
-      margin-block: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: calc(var(--spacing) * 4);
-      padding: calc(var(--spacing) * 0);
-    }
-    li {
-      display: block;
-      a {
-        margin: 5px;
-        display: inline-block;
-        border-radius: var(--radius-lg);
-        background-color: var(--color-gray-500);
-        padding-inline: 10px;
-        padding-block: 20px;
-        text-align: center;
-        font-size: var(--text-lg);
-        line-height: var(--tw-leading, var(--text-lg--line-height));
-        color: var(--color-white);
-        text-decoration-line: none;
-        transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-        transition-duration: var(--tw-duration, var(--default-transition-duration));
-        --tw-duration: 500ms;
-        transition-duration: 500ms;
-        &:hover {
-          background-color: var(--color-white);
-          color: var(--color-black);
-        }
-      }
-    }
+@layer base {
+  * {
+    margin: calc(var(--spacing) * 0);
+    padding: calc(var(--spacing) * 0);
+    font-family: 'Oswald';
+    color: var(--color-white);
   }
-  .servicos-banner {
-    position: relative;
+  html, body {
+    background-color: #343337;
+  }
+  header img {
+    margin-inline: auto;
+    margin-block: 5px;
     display: flex;
-    height: 400px;
+    height: 15vh;
+    width: 15vh;
     align-items: center;
+    border-radius: calc(infinity * 1px);
+  }
+  header nav {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  header nav ul {
+    display: flex;
+    list-style-type: none;
     justify-content: center;
-    background-image: url('../src/image/fb6456ee-c321-4e45-8b1c-5a8457ec0076.png');
-    background-size: cover;
-    background-position: center;
-    padding-inline: 110px;
-    padding-block: calc(var(--spacing) * 0);
-    .overlay {
-      max-width: 600px;
-      border-radius: var(--radius-lg);
-      background-color: color-mix(in srgb, #000 60%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
-      }
-      padding: 20px;
-      text-align: left;
-      color: var(--color-white);
-      h2 {
-        margin-bottom: 10px;
-      }
-      ul {
-        list-style-type: none;
-        padding-left: 20px;
-      }
-    }
   }
-  .localizacao {
-    padding: 40px;
-    text-align: center;
-    .mapa-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      padding-inline: 40px;
-    }
-    .mapa {
-      width: 100%;
-      max-width: 500px;
-      text-align: center;
-      iframe {
-        height: 350px;
-        width: 100%;
-        --tw-border-style: none;
-        border-style: none;
-      }
-    }
-    .botoes-mapa {
-      margin-inline: 10px;
-      margin-block: 5px;
-      display: inline-block;
-      border-radius: var(--radius-lg);
-      background-color: #0070C9;
-      padding-inline: 10px;
-      padding-block: 15px;
-      color: var(--color-white);
-      text-decoration-line: none;
-      transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-      transition-duration: var(--tw-duration, var(--default-transition-duration));
-      --tw-duration: 500ms;
-      transition-duration: 500ms;
-      a {
-        color: var(--color-white);
-        text-decoration-line: none;
-        &:hover, &:active {
-          background-color: #005a8c;
-        }
-      }
-    }
+  header nav ul li {
+    margin-inline: 35px;
+    margin-block: 20px;
   }
-  .sobre {
-    background-color: var(--color-gray-500);
-    padding: 40px;
-    text-align: justify;
-    color: var(--color-white);
-    &-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-  }
-  .contato {
-    text-align: center;
-    &-botoes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-  }
-  .btn-icon {
-    display: inline-block;
-    border-radius: var(--radius-lg);
-    background-color: var(--color-gray-500);
-    padding-inline: 10px;
-    padding-block: 20px;
-    color: var(--color-white);
+  header nav ul li a {
+    padding: 30px;
     text-decoration-line: none;
+  }
+  header nav ul li a:hover {
+    border-radius: 10px;
+    background-color: color-mix(in srgb, #fff 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 60%, transparent);
+    }
+    padding: 13px;
+    color: #343337;
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-    --tw-duration: 500ms;
-    transition-duration: 500ms;
+    --tw-duration: 800ms;
+    transition-duration: 800ms;
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
   }
-  footer {
-    background-color: var(--color-gray-500);
-    padding: 20px;
+  .servicos-banner {
+    background-size: cover;
+    background-position: center;
+    background-image: url('../images/servicos-banner.png');
+  }
+  .servicos-banner ul {
+    list-style-type: none;
+    background-color: color-mix(in srgb, #000 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
+    }
+    padding: 30px 15px;
     text-align: center;
+  }
+  .servicos-banner li {
+    margin-block: 20px;
+    font-size: 1.1rem;
+  }
+  .localizacao {
+    display: flex;
+    height: auto;
+    width: auto;
+    justify-content: space-around;
+  }
+  .localizacao div {
+    margin-top: 5px;
+    display: flex;
+    height: auto;
+    width: 450px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  iframe {
+    height: 250px;
+    width: 450px;
+    border-radius: 10px;
+    --tw-border-style: none;
+    border-style: none;
+  }
+  .localizacao div#l1 div.btn-l1 a, .localizacao div#l2 div.btn-l2 a {
+    padding: 13px;
+    text-decoration-line: none;
+  }
+  .localizacao div#l1 div.btn-l1 a:hover, .localizacao div#l2 div.btn-l2 a:hover {
+    border-radius: 10px;
+    background-color: color-mix(in srgb, #fff 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 60%, transparent);
+    }
+    padding: 13px;
+    color: #343337;
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 800ms;
+    transition-duration: 800ms;
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
+  .sobre h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .sobre p {
+    margin-inline: auto;
+    width: 80%;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .contato {
+    margin-top: 30px;
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contato img {
+    height: 15vh;
+    width: 15vw;
+  }
+  .contato a {
     color: var(--color-white);
-    img {
-      height: auto;
-      width: 50px;
+    text-decoration-line: none;
+  }
+  .contato a:hover {
+    color: color-mix(in srgb, #fff 55%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 55%, transparent);
     }
-    a {
-      color: var(--color-white);
-      text-decoration-line: none;
-      &:hover {
-        color: var(--color-black);
-      }
-    }
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 800ms;
+    transition-duration: 800ms;
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
   }
 }
 @property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
   syntax: "*";
   inherits: false;
 }
@@ -355,6 +336,7 @@ body {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-duration: initial;
+      --tw-ease: initial;
     }
   }
 }
